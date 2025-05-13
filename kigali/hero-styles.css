@@ -1,0 +1,136 @@
+/* Hero Section Styles */
+.hero {
+height: 90vh;
+min-height: 600px;
+display: flex;
+align-items: center;
+color: var(--light);
+position: relative;
+overflow: hidden;
+}
+
+.slideshow {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+.slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+opacity: 0;
+transition: opacity 1.5s ease-in-out;
+z-index: 0;
+}
+
+.slide.active {
+opacity: 1;
+z-index: 1;
+}
+
+.slide-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+max-width: 800px;
+position: relative;
+z-index: 1;
+padding: var(--spacing-xl);
+border-radius: var(--radius-lg);
+background-color: rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(5px);
+box-shadow: var(--shadow-lg);
+}
+
+.hero-title {
+font-size: clamp(2.5rem, 6vw, 3.8rem);
+font-weight: 800;
+line-height: 1.2;
+margin-bottom: var(--spacing-lg);
+color: var(--light);
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+font-size: clamp(1.1rem, 2vw, 1.3rem);
+margin-bottom: var(--spacing-xl);
+max-width: 650px;
+color: rgba(255, 255, 255, 0.9);
+}
+
+/* Partners Section */
+.partners-grid {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: var(--spacing-xl);
+}
+
+.partner-logo {
+background-color: var(--light);
+padding: var(--spacing-lg);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-md);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 180px;
+height: 100px;
+transition: all var(--transition-normal) var(--transition-ease);
+}
+
+.partner-logo:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-lg);
+}
+
+.partner-logo img {
+max-width: 100%;
+max-height: 70px;
+filter: grayscale(30%);
+transition: filter var(--transition-normal) var(--transition-ease);
+}
+
+.partner-logo:hover img {
+filter: grayscale(0%);
+}
+
+/* Removed wave dividers */
+
+@media (max-width: 768px) {
+.hero {
+  height: 80vh;
+}
+
+.hero-content {
+  padding: var(--spacing-lg);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+.partner-logo {
+  width: 150px;
+  height: 80px;
+}
+}
